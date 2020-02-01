@@ -2,70 +2,70 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Akihiro Matsukawa</title>
-    <link>http://example.org/</link>
+    <link>http://amatsukawa.github.io/</link>
     <description>Recent content on Akihiro Matsukawa</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 07 Jul 2019 00:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://example.org/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://amatsukawa.github.io/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Research Engineering FAQs</title>
-      <link>http://example.org/posts/re/</link>
+      <link>http://amatsukawa.github.io/posts/re/</link>
       <pubDate>Sun, 07 Jul 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/re/</guid>
+      <guid>http://amatsukawa.github.io/posts/re/</guid>
       <description>ML research engineering is a role that requires a mix of software engineering and machine learning skills. Certain aspects of the job is also shared with related positions such as data scientists as well as big data and distributed systems engineers. Perhaps for these reasons, it’s somewhat unclear what exactly the ML research engineer role entails, and there is also no single clear &amp;quot;track&amp;quot; to follow to become one.
 While I feel woefully under qualified to be giving career advice, I nevertheless find myself on the receiving end of a lot of questions around how to become a research engineer and how to be a successful one.</description>
     </item>
     
     <item>
       <title>A Constructive Derivation of the Determinant</title>
-      <link>http://example.org/posts/determinant/</link>
+      <link>http://amatsukawa.github.io/posts/determinant/</link>
       <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/determinant/</guid>
+      <guid>http://amatsukawa.github.io/posts/determinant/</guid>
       <description>If your experience learning about the determinant of a matrix in an introductory linear algebra class was anything like mine, it went something like this: you start with the formula for the determinant of a 2x2 matrix, then a 3x3 matrix, perhaps a generic formula or algorithm for any square matrix, finally ending with a statement like &amp;quot;we care about determinants because if it&#39;s 0, then the matrix is not invertible&amp;quot;.</description>
     </item>
     
     <item>
       <title>Variational Dequantization</title>
-      <link>http://example.org/posts/variational-dequantizer/</link>
+      <link>http://amatsukawa.github.io/posts/variational-dequantizer/</link>
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/posts/variational-dequantizer/</guid>
+      <guid>http://amatsukawa.github.io/posts/variational-dequantizer/</guid>
       <description>In this post I&#39;ll discuss methods for dequantizing discrete values for continuous distributions. We&#39;ll start with why dequantization is needed, then move on to a simple method for the problem, and end with a more flexible and general method recently proposed in the Flow++ paper [1].
 Most measurements in the real world are continuous, and therefore we may want to use a continuous distribution to model them. However, for the sake of storage, most measurement values are clipped to a pre-defined discrete set of values (aka.</description>
     </item>
     
     <item>
       <title>About</title>
-      <link>http://example.org/about/</link>
+      <link>http://amatsukawa.github.io/about/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/about/</guid>
+      <guid>http://amatsukawa.github.io/about/</guid>
       <description>My name is Akihiro Matsukawa. Most people call me Aki. I work at DE Shaw in NYC. Previously, I worked at DeepMind, Google, and Twitter. I&#39;m also a part-time MSCS student at Stanford through the HCP program, with a concentration in ML.
 Currently, my primary interest is financial modeling. Previously, I&#39;ve worked on probabilistic deep learning and generative modeling, particularly on using these models to improve predictive uncertainty and out-of-distribution behavior, as well as specific production applications such as text-to-speech (WaveNet).</description>
     </item>
     
     <item>
       <title>Notes</title>
-      <link>http://example.org/notes/</link>
+      <link>http://amatsukawa.github.io/notes/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/notes/</guid>
+      <guid>http://amatsukawa.github.io/notes/</guid>
       <description>The typical way I try to really learn a topic is to make an outline of important concepts, and to reproduce notes about the concepts from memory. These are the results of that exercise. I find myself referring to these notes frequently, and I also rewrite them perodically for review. I thought someone else might find them useful.
 Convex Optimization  Convex sets Convex functions basics Composition rules  </description>
     </item>
     
     <item>
       <title>Publications</title>
-      <link>http://example.org/pub/</link>
+      <link>http://amatsukawa.github.io/pub/</link>
       <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
       
-      <guid>http://example.org/pub/</guid>
+      <guid>http://amatsukawa.github.io/pub/</guid>
       <description>Preprints / Working Papers Detecting Out-of-Distribution Inputs to Deep Generative Models Using a Test for Typicality Eric Nalisnick, Akihiro Matsukawa, Yee Whye Teh, Balaji Lakshminarayanan
 Conference Papers Hybrid Models with Deep and Invertible Features Eric Nalisnick*, Akihiro Matsukawa*, Yee Whye Teh, Dilan Gorur, and Balaji Lakshminarayanan ICML 2019
 Do Deep Generative Models Know What They Don&#39;t Know? Eric Nalisnick, Akihiro Matsukawa, Yee Whye Teh, Dilan Gorur, Balaji Lakshminarayanan ICLR 2019</description>
