@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge"><title>Research Engineering FAQs - Akihiro Matsukawa</title><meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta property="og:title" content="Research Engineering FAQs" />
+<meta property="og:description" content="An attempt to answer some common questions I get about research engineering." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="http://example.org/posts/re/" />
+<meta property="article:published_time" content="2019-07-07T00:00:00+00:00" />
+<meta property="article:modified_time" content="2019-07-07T00:00:00+00:00" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Research Engineering FAQs"/>
+<meta name="twitter:description" content="An attempt to answer some common questions I get about research engineering."/>
+<link href="https://fonts.googleapis.com/css?family=Ubuntu:300,400,300italic,400italic|Raleway:200,300" rel="stylesheet">
+
+	<link rel="stylesheet" type="text/css" media="screen" href="http://example.org/css/normalize.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="http://example.org/css/main.css" />
+
+	<script src="http://example.org/js/feather.min.js"></script>
+	
+	<script src="http://example.org/js/main.js"></script>
+
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+
+</head>
+
+<body>
+	<div class="container wrapper post">
+		<div class="header">
+	<h1 class="site-title"><a href="http://example.org/">Akihiro Matsukawa</a></h1>
+	<div class="site-description"><nav class="nav social">
+			<ul class="flat"><a href="https://github.com/amatsukawa" title="Github"><i data-feather="github"></i></a><a href="/index.xml" title="RSS"><i data-feather="rss"></i></a></ul>
+		</nav>
+	</div>
+
+	<nav class="nav">
+		<ul class="flat">
+			
+			<li>
+				<a href="/">Blog</a>
+			</li>
+			
+			<li>
+				<a href="/notes/">Notes</a>
+			</li>
+			
+			<li>
+				<a href="/pub/">Publications</a>
+			</li>
+			
+			<li>
+				<a href="/about/">About</a>
+			</li>
+			
+		</ul>
+	</nav>
+</div>
+
+
+		<div class="post-header">
+			<h1 class="title">Research Engineering FAQs</h1>
+			<div class="meta">
+                          
+                            Jul 7, 2019
+                          
+                          
+                        </div>
+		</div>
+
+		<div class="markdown">
+			<p>ML research engineering is a role that requires a mix of software engineering and machine learning skills. Certain aspects of the job is also shared with related positions such as data scientists as well as big data and distributed systems engineers. Perhaps for these reasons, it’s somewhat unclear what exactly the ML research engineer role entails, and there is also no single clear &quot;track&quot; to follow to become one.</p>
+
+<p>While I feel woefully under qualified to be giving career advice, I nevertheless find myself on the receiving end of a lot of questions around how to become a research engineer and how to be a successful one. I’ve found there is quite a lot of overlap in the questions people ask, and this is my attempt to answer some of these FAQs.</p>
+
+<p>These are my personal opinions. While obviously shaped by my experience, they are not meant to represent the views or hiring criteria of any previous or current employers.</p>
+
+<p>Thank you to<a href="https://twitter.com/ericjang11"> @ericjang11</a>,<a href="https://twitter.com/hardmaru"> @hardmaru</a>, and those on Twitter who engaged on a draft of this post. If you have any more questions, please leave it in the comments below!</p>
+
+<h2 id="what-does-a-research-engineer-do">What does a research engineer do?</h2>
+
+<p>Responsibilities of a research engineer can differ quite a lot by company, and even by team within the same company. But generally, doing effective research means taking advantage of the work that others have done, be it algorithm implementations, model checkpoints, or evaluation tools. In order for this to happen at scale, a level of software engineering discipline is necessary. I define the primary goal of a research engineer as enabling, contributing to, and accelerating ML research by bringing engineering expertise to the projects. Some examples of a research engineer's responsibilities are:</p>
+
+<ul>
+<li>Implementing algorithms and related baselines under a common API to allow for rapid experimentation.</li>
+<li>Setting up distributed training.</li>
+<li>Creating evaluation tools in Jupyter notebooks.</li>
+</ul>
+
+<p>Often, a research engineer also makes contributions to the research itself, especially using insights and intuitions derived from implementing and iterating on experiments.</p>
+
+<p>If you want a specific example, I've found this
+<a href="https://docs.google.com/presentation/d/17NoJY2SnC2UMbVegaRCWA7Oca7UCZ3vHnMqBV4SUayc/mobilepresent">talk</a> from AllenNLP to closely represent the kinds of things a research engineer thinks about.</p>
+
+<h2 id="whats-the-difference-between-rs-re-and-swe">What's the difference between RS, RE and SWE?</h2>
+
+<p>These vary quite a lot by company. Sometimes, there is no actual day-to-day difference, and the different titles exist for legacy/bauracratic reasons (eg. only someone with a PhD can be a &quot;scientist&quot;). Also remember that the word &quot;research&quot; will mean something different for a company like Google compared to a startup. All of this makes it hard to exactly enumerate the difference between these titles.</p>
+
+<p>When such a distinction is made in a meaningful way, I would broadly say that research scientists and research engineers work directly on specific research projects, while a software engineer typically works on the platforms that support many projects. For instance, a RS and RE may work together to propose a a new learning algorithm, while a SWE might work on the distributed systems framework to make sure it can scale to hundreds of workers, which enables the implementation of the aforementioned algorithm.</p>
+
+<p>This distinction is pretty fluid anyway, even when groups do distinguish between RS/RE/SWE. For example, if you really want to scale up distributed training of a large model, you should think hard about how you colocate relevant computation and minimize network communication. Sometimes, the right thing to do might be a computer science solution, such as using an efficient all-reduce algorithm to accumulate gradients. In a different situation, the solution might be a machine learning one, eg. broadcasts updated variables less often to increase throughput and correct for it with importance sampling. The ability to reason about the tradeoffs between these options is what makes a research engineer valuable to a research project.</p>
+
+<h2 id="is-being-a-research-engineer-a-stepping-stone-to-becoming-a-research-scientist">Is being a research engineer a stepping stone to becoming a research scientist?</h2>
+
+<p>Not really. Since &quot;research scientist&quot; is vague, I'll address two separate situations:</p>
+
+<p><em>You want to work on research focused on certain applications in industry, and have no interest in academia</em>. This is the situation when RS/RE distinction typically doesn't exist, especially when you become more experienced. Just make sure to join a team that's focused on this. If you become a senior RE, you will basically do the same thing as a RS. There is no need to worry about the title IMO.</p>
+
+<p><em>You want to do research in the sense of publishing and participating in academia</em>. In this situation, there are some real differences. While you will most likely be immersed in some particular research area and gain expertise in it, as a RE you will focus on implementation and engineering aspects more. Being a researcher also has a lot of “soft skills” around how to be part of the research community that you won’t necessarily learn, such as framing your work with respect to other references, writing and reviewing papers well, organizing conferences and workshops, etc. While you will certainly be exposed to a lot of these skills that are crucial to being a successful member of the research community, it won’t necessarily be your primary focus to learn them. I'd say it's not impossible for your job to be a “better paid industry PhD” but that's not always the case. The job is more typically focused on the intersection of ML and engineering needed for doing ML research at the scale in industry. If you know for sure you want to pursue this route, it's more efficient to just get a PhD.</p>
+
+<h2 id="is-it-a-way-to-set-me-up-to-be-a-superstar-production-ml-engineer">Is it a way to set me up to be a superstar production ML engineer?</h2>
+
+<p>Maybe. What it will give you is the depth of ML knowledge that you need to work on production models. But working on ML in production is much more than understanding the math. You will mostly likely deal with standard datasets in research, while data cleaning is a huge part of making ML work in production. You most likely won’t think about serving much, while serving infrastructure is obviously important if you have real users. You won’t think much about many more issues like model churn around decision boundaries, training/serving distribution drift, and other issues that are extremely important in production. So to leverage a research engineering background into production ML, I think you have to bring the “production” part of the background from somewhere else, eg. if you are already a strong production engineer or data scientist.</p>
+
+<p>Also, ML research is not always sexy work. You spend a lot of days frustrated that things don’t work with no obvious ideas on how to fix them. Sometimes you can go for six months with no results. Even if you get results, you are working on a hypothetical problem (that hopefully parallels “the real world”, but still). So if you derive a lot of energy from launching things to a lot of users, take this aspect of the job into account.</p>
+
+<h2 id="whats-your-background-if-im-still-in-school-what-should-i-study">What’s your background? If I’m still in school, what should I study?</h2>
+
+<p>I have a computer science Bachelors and a partially completed machine learning Masters. I've worked on big data systems as well as certain big data pipelines using those systems prior to entering the ML field.</p>
+
+<p>If you are in school and are trying to choose what to study, I would personally recommend getting a CS background at a Bachelor’s level, with a focus in distributed systems or graphics (because it has a lot of linear algebra and GPU coding). I would try to take as many math, statistics, and even physics classes as possible during the undergraduate degree. I think a graduate background in ML is obviously helpful, although any quantitative discipline that uses a lot of linear algebra, statistics, calculus, and/or optimization is also beneficial (eg. electrical engineering).</p>
+
+<h2 id="i-am-a-working-swe-interested-in-being-a-research-engineer-what-do-i-do">I am a working SWE interested in being a research engineer. What do I do?</h2>
+
+<p>Assuming you are a good SWE, you should focus on building your ML background. Work through a few ML classes online. I personally would recommend going through recorded lectures, homework, and exams from strong graduate programs rather than a MOOC or an online program. The latter are all great resources down the line, but IMHO they sometimes end up sacrificing depth in theory for the “for hackers” approach of building a cool demo.</p>
+
+<p>After you have the basics, pick a popular topic in ML that interests you (eg. RL, generative models, computer vision, NLP). Read the seminal papers and implement a few of them. You will have most likely banged your head against some stupid “minor” thing that turns out to not be so minor that took you forever to figure out. Many people have an idealized image of what it’s like to do ML research. In reality, my experience is you spend less time actually doing the &quot;sexy&quot; work of developing new techniques than figuring out small but very important implementation details (read about read/write semantics of non-resource <code>tf.Variable</code> within a single <code>session.run</code> call in TF sometime). Consider these aspects when deciding if you actually want to make the switch.</p>
+
+<h2 id="what-questions-should-i-ask-that-is-specific-to-the-research-engineer-role-if-im-considering-joining-a-team">What questions should I ask that is specific to the research engineer role if I’m considering joining a team?</h2>
+
+<p>I think the overaching message of this FAQ has been that there is a lot of variance in the RE role. Therefore, it's important to figure out exactly what it means to be an RE on each team. Some important questions are:</p>
+
+<ul>
+<li>If you distinguish between research RS/RE/SWE, can you explain the distinction?</li>
+<li>If these distinctions exist, what’s the typical team composition for a project? What’s the collaboration pattern? IMHO, the most productive and healthy pattern is where research scientists and engineers are both invested and bring their unique expertise in an equal partnership. Other patterns, such as research engineers &quot;working for&quot; research scientists or research engineers leading projects with research scientists in a &quot;consulting&quot; role for multiple projects, are OK but less ideal.</li>
+<li>How many projects does a research engineer typically contribute to? More than 3 is a signal that the work is probably more platform focused. When it comes to research, you cannot really meaningfully work on more than one main project and one side project.</li>
+<li>What will be my balance between research vs. production? What’s the relative priority between publishing and launching? (While this is a subpar metric for many reasons, I find it’s still the best one to gauge this balance).</li>
+<li>Will my manager be a research scientist or research engineer? Will I have a mentor who is the other kind my manager is not?</li>
+<li>What is the intended career track for a research engineer on the team? Become a research expert? Become more of a SWE TL? Become a manager? Some combination of the above?</li>
+</ul>
+
+		</div>
+
+		<div class="post-tags">
+			
+				
+			
+		</div>
+		</div>
+	<div class="footer wrapper">
+	<nav class="nav">
+		<div> <a href="https://github.com/vividvilla/ezhil">Ezhil theme</a> | Built with <a href="https://gohugo.io">Hugo</a></div>
+	</nav>
+</div>
+
+
+
+<script>feather.replace()</script>
+
+<script type="text/javascript" async
+  src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+  MathJax.Hub.Config({
+  tex2jax: {
+    inlineMath: [['$','$'], ['\\(','\\)']],
+    displayMath: [['$$','$$'], ['\\[','\\]']],
+    processEscapes: true,
+    processEnvironments: true,
+    skipTags: ['script', 'noscript', 'style', 'textarea', 'pre'],
+    TeX: { equationNumbers: { autoNumber: "AMS" },
+         extensions: ["AMSmath.js", "AMSsymbols.js"] }
+  }
+  });
+  MathJax.Hub.Queue(function() {
+    
+    
+    
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i = 0; i < all.length; i += 1) {
+        all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+
+  MathJax.Hub.Config({
+  
+  TeX: { equationNumbers: { autoNumber: "AMS" } }
+  });
+</script>
+</body>
+</html>
