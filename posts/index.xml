@@ -17,7 +17,7 @@
       <pubDate>Sun, 07 Jul 2019 00:00:00 +0000</pubDate>
       
       <guid>https://amatsukawa.github.io/posts/re/</guid>
-      <description>ML research engineering is a role that requires a mix of software engineering and machine learning skills. Certain aspects of the job is also shared with related positions such as data scientists as well as big data and distributed systems engineers. Perhaps for these reasons, it’s somewhat unclear what exactly the ML research engineer role entails, and there is also no single clear &amp;quot;track&amp;quot; to follow to become one.
+      <description>ML research engineering is a role that requires a mix of software engineering and machine learning skills. Certain aspects of the job is also shared with related positions such as data scientists as well as big data and distributed systems engineers. Perhaps for these reasons, it’s somewhat unclear what exactly the ML research engineer role entails, and there is also no single clear &amp;ldquo;track&amp;rdquo; to follow to become one.
 While I feel woefully under qualified to be giving career advice, I nevertheless find myself on the receiving end of a lot of questions around how to become a research engineer and how to be a successful one.</description>
     </item>
     
@@ -27,7 +27,7 @@ While I feel woefully under qualified to be giving career advice, I nevertheless
       <pubDate>Wed, 10 Apr 2019 00:00:00 +0000</pubDate>
       
       <guid>https://amatsukawa.github.io/posts/determinant/</guid>
-      <description>If your experience learning about the determinant of a matrix in an introductory linear algebra class was anything like mine, it went something like this: you start with the formula for the determinant of a 2x2 matrix, then a 3x3 matrix, perhaps a generic formula or algorithm for any square matrix, finally ending with a statement like &amp;quot;we care about determinants because if it&#39;s 0, then the matrix is not invertible&amp;quot;.</description>
+      <description>If your experience learning about the determinant of a matrix in an introductory linear algebra class was anything like mine, it went something like this: you start with the formula for the determinant of a 2x2 matrix, then a 3x3 matrix, perhaps a generic formula or algorithm for any square matrix, finally ending with a statement like &amp;ldquo;we care about determinants because if it&amp;rsquo;s 0, then the matrix is not invertible&amp;rdquo;.</description>
     </item>
     
     <item>
@@ -36,7 +36,7 @@ While I feel woefully under qualified to be giving career advice, I nevertheless
       <pubDate>Thu, 28 Feb 2019 00:00:00 +0000</pubDate>
       
       <guid>https://amatsukawa.github.io/posts/variational-dequantizer/</guid>
-      <description>In this post I&#39;ll discuss methods for dequantizing discrete values for continuous distributions. We&#39;ll start with why dequantization is needed, then move on to a simple method for the problem, and end with a more flexible and general method recently proposed in the Flow++ paper [1].
+      <description>In this post I&amp;rsquo;ll discuss methods for dequantizing discrete values for continuous distributions. We&amp;rsquo;ll start with why dequantization is needed, then move on to a simple method for the problem, and end with a more flexible and general method recently proposed in the Flow++ paper [1].
 Most measurements in the real world are continuous, and therefore we may want to use a continuous distribution to model them. However, for the sake of storage, most measurement values are clipped to a pre-defined discrete set of values (aka.</description>
     </item>
     

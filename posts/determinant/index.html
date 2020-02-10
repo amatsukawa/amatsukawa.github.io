@@ -99,129 +99,94 @@
 			<p>If your experience learning about the determinant of a matrix in an introductory linear algebra class
 was anything like mine, it went something like this: you start with the formula for the determinant of a 2x2 matrix,
 then a 3x3 matrix, perhaps a generic formula or algorithm for any square matrix, finally ending with a statement
-like &quot;we care about determinants because if it's 0, then the matrix is not invertible&quot;.</p>
-
+like &ldquo;we care about determinants because if it&rsquo;s 0, then the matrix is not invertible&rdquo;.</p>
 <p>Recently in working with the
 <a href="https://en.wikipedia.org/wiki/Probability_density_function#Dependent_variables_and_change_of_variables">change of variables formula</a>
 and <a href="https://blog.evjang.com/2018/01/nf1.html">normalizing flows</a>, I discovered that there is, in fact, a geometric interpretation
-of the determinant as the &quot;signed&quot; volume change of a linear transformation. In this post, I'll try to provide an intuitive explanation
+of the determinant as the &ldquo;signed&rdquo; volume change of a linear transformation. In this post, I&rsquo;ll try to provide an intuitive explanation
 and derivation of the determinant by constructing it from this intuition.</p>
-
 <hr>
-
 <h2 id="linear-transformation--volume-change">Linear Transformation &amp; Volume Change</h2>
-
 <p>3Blue1Brown has a great video explaining what the determinant is visually.
-Since he does a much better job of it than I think I ever could, I'll just embed it here.</p>
-
-<p><center>
+Since he does a much better job of it than I think I ever could, I&rsquo;ll just embed it here.</p>
+<center>
 <iframe width="560" height="315" src="https://www.youtube.com/embed/Ip3X9LOh2dk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-</center></p>
-
-<p>Equipped with this intuition, let's take a slightly more mathematical approach to derive the determinant formula.</p>
-
+</center>
+<p>Equipped with this intuition, let&rsquo;s take a slightly more mathematical approach to derive the determinant formula.</p>
 <hr>
-
-<h2 id="volume-and-its-properties">Volume, and it's Properties</h2>
-
-<p>Rather than worrying about linear transformations, let's just consider points in space for now.
-Given a matrix $A \in R^{(n \times n)}$, let's define a function $ V = \text{det}(a_1, ..., a_n)$ over the columns of $A$
-such that $V$ is the volume of the parallelepiped with vertices ${a_1, ..., a_n}$.</p>
-
+<h2 id="volume-and-its-properties">Volume, and it&rsquo;s Properties</h2>
+<p>Rather than worrying about linear transformations, let&rsquo;s just consider points in space for now.
+Given a matrix $A \in R^{(n \times n)}$, let&rsquo;s define a function $ V = \text{det}(a_1, &hellip;, a_n)$ over the columns of $A$
+such that $V$ is the volume of the parallelepiped with vertices ${a_1, &hellip;, a_n}$.</p>
 <p>Intuitively, what would we expect a quantity that we claim is the volume to have?</p>
-
 <h3 id="multilinear">Multilinear</h3>
-
 <p>We would expect that the volume is linear in one of the vectors $a_i$, if we hold all other vectors constant.
 This is what we naturally expect from simple geometry, as illustrated in the 2D case below.</p>
-
 <p align="center">
 <img src="/assets/determinant/det_multilinear.png">
 </p>
-
 <p>This is known as <strong>multilinearity</strong>. In general:</p>
-
-<p><span  class="math">\[
-\text{det}(x \cdot a_1 + y, ..., a_n) = x \cdot \text{det}(a_1, ..., a_n) + \text{det}(y, ..., a_n)
-\]</span></p>
-
+<p>$$
+\text{det}(x \cdot a_1 + y, &hellip;, a_n) = x \cdot \text{det}(a_1, &hellip;, a_n) + \text{det}(y, &hellip;, a_n)
+$$</p>
 <h3 id="alternating">Alternating</h3>
-
-<p>We would expect that if any two of ${a_1, ..., a_n}$ are the same point, the volume would &quot;collapse&quot; to 0.
+<p>We would expect that if any two of ${a_1, &hellip;, a_n}$ are the same point, the volume would &ldquo;collapse&rdquo; to 0.
 Again, this is intuitive in 2D. If $a_1 = a_2$, then the volume of the parallelogram would be 0.</p>
-
 <p align="center">
 <img src="/assets/determinant/det_alternating.png">
 </p>
-
 <p>This necessarily implies that if we swapped the order of the two of the columns of A, then the determinant will change signs.
 This is known as the <strong>alternating</strong> property.</p>
-
-<p><span  class="math">\[
+<p>$$
 \begin{aligned}
-0 = \text{det}(a, v+w, v+w) 
-&= \text{det}(a, v, v+w) + \text{det}(a, w, v+w) \\
-&= \text{det}(a, v, v) + \text{det}(a, v, w) + \text{det}(a, w, v) + \text{det}(a, w, w) \\
-&= \text{det}(a, v, w) + \text{det}(a, w, v) \\
-& \Rightarrow \text{det}(a, v, w) = -\text{det}(a, w, v)
+0 = \text{det}(a, v+w, v+w)
+&amp;= \text{det}(a, v, v+w) + \text{det}(a, w, v+w) \\<br>
+&amp;= \text{det}(a, v, v) + \text{det}(a, v, w) + \text{det}(a, w, v) + \text{det}(a, w, w) \\<br>
+&amp;= \text{det}(a, v, w) + \text{det}(a, w, v) \\<br>
+&amp; \Rightarrow \text{det}(a, v, w) = -\text{det}(a, w, v)
 \end{aligned}
-\]</span></p>
-
+$$</p>
 <h3 id="determinant-of-unit-hypercube-is-1">Determinant of Unit Hypercube is 1</h3>
-
-<p>The volume of the hypercube defined by standard basis vectors should be 1, $\text{det}(e_1, ..., e_n) = 1$.</p>
-
+<p>The volume of the hypercube defined by standard basis vectors should be 1, $\text{det}(e_1, &hellip;, e_n) = 1$.</p>
 <hr>
-
 <h2 id="derivation">Derivation</h2>
-
 <p>We can now derive the formula for the derterminant from these properties. Note that we can write any $a_j$ as a linear
-combination of the standard basis $a<em>j = \alpha</em>{1,j} e<em>1 + ... + \alpha</em>{n,j} e<em>n$. I'm using the convention that
-$a</em>{i,j}$ is the $i$-th row and $j$-th column of the matrix $A$. Combining this with multilinearity:</p>
-
-<p><span  class="math">\[
+combination of the standard basis $a_j = \alpha_{1,j} e_1 + &hellip; + \alpha_{n,j} e_n$. I&rsquo;m using the convention that
+$a_{i,j}$ is the $i$-th row and $j$-th column of the matrix $A$. Combining this with multilinearity:</p>
+<p>$$
 \begin{aligned}
-\text{det}(a_1, a_2, ..., a_n) 
-&= \text{det}(\alpha_{1,1} e_1 + ... + \alpha_{n,1} e_n, a_2, ..., a_n) \\
-&= \sum_{c_1} \alpha_{c_1, 1} \cdot \text{det}(e_{c_1}, a_2, ..., a_n) \\
-&= \sum_{c_1} \alpha_{c_1, 1} \cdot \text{det}(e_{c_1}, \alpha_{1,2} e_1 + ... + \alpha_{n,2} e_n, ..., a_n) \\
-&= \sum_{c_1} \sum_{c_2} \alpha_{c_1, 1}\alpha_{c_2, 2} \cdot \text{det}(e_{c_1}, e_{c_2}, ..., a_n) \\
-& \dots \\
-&= \sum_{c_1, ..., c_n} \left[\prod_i \alpha_{c_i, i} \right] \cdot \text{det}(e_{c_1}, e_{c_2}, ..., e_{c_n}) \\
+\text{det}(a_1, a_2, &hellip;, a_n)
+&amp;= \text{det}(\alpha_{1,1} e_1 + &hellip; + \alpha_{n,1} e_n, a_2, &hellip;, a_n) \\<br>
+&amp;= \sum_{c_1} \alpha_{c_1, 1} \cdot \text{det}(e_{c_1}, a_2, &hellip;, a_n) \\<br>
+&amp;= \sum_{c_1} \alpha_{c_1, 1} \cdot \text{det}(e_{c_1}, \alpha_{1,2} e_1 + &hellip; + \alpha_{n,2} e_n, &hellip;, a_n) \\<br>
+&amp;= \sum_{c_1} \sum_{c_2} \alpha_{c_1, 1}\alpha_{c_2, 2} \cdot \text{det}(e_{c_1}, e_{c_2}, &hellip;, a_n) \\<br>
+&amp; \dots \\<br>
+&amp;= \sum_{c_1, &hellip;, c_n} \left[\prod_i \alpha_{c_i, i} \right] \cdot \text{det}(e_{c_1}, e_{c_2}, &hellip;, e_{c_n}) \\<br>
 \end{aligned}
-\]</span></p>
-
-<p>Note that there are $n^n$ terms in the sum, but most of these will have some $e_{c<em>i} = e</em>{c_j}, i \neq j$
-which makes determinant term 0 due to the alternating property. In fact, we see that <em>only valid
-<a href="https://en.wikipedia.org/wiki/Permutation">permutations</a> of $(1, ..., n)$ will have a non-zero determinant term.</em>
-We'll define this set of valid permutations as $S_n$.</p>
-
+$$</p>
+<p>Note that there are $n^n$ terms in the sum, but most of these will have some $e_{c_i} = e_{c_j}, i \neq j$
+which makes determinant term 0 due to the alternating property. In fact, we see that *only valid
+<a href="https://en.wikipedia.org/wiki/Permutation">permutations</a> of $(1, &hellip;, n)$ will have a non-zero determinant term.*
+We&rsquo;ll define this set of valid permutations as $S_n$.</p>
 <p>Moreover, since the valid permutations are all over the standard basis, the absolute value of the determinant will
-be 1, and it's sign depends on how many swaps we did from the natural order $(e_1, ..., e_n)$. We will define
+be 1, and it&rsquo;s sign depends on how many swaps we did from the natural order $(e_1, &hellip;, e_n)$. We will define
 the sign $sgn(\sigma), \sigma \in S_n$ as $-1$ raised to the number of swaps. This allows us to simplify the
 equation above to:</p>
-
-<p><span  class="math">\[
-\text{det}(a_1, a_2, ..., a_n) = \sum_{\sigma \in S_n} sgn(\sigma) \prod_i \alpha_{\sigma(i), i}
-\]</span></p>
-
-<p>We've now arrived at the <a href="https://en.wikipedia.org/wiki/Leibniz_formula_for_determinants">Leibniz formula</a> for determinants.</p>
-
+<p>$$
+\text{det}(a_1, a_2, &hellip;, a_n) = \sum_{\sigma \in S_n} sgn(\sigma) \prod_i \alpha_{\sigma(i), i}
+$$</p>
+<p>We&rsquo;ve now arrived at the <a href="https://en.wikipedia.org/wiki/Leibniz_formula_for_determinants">Leibniz formula</a> for determinants.</p>
 <hr>
-
 <h2 id="a-note-on-linear-transforms">A Note on Linear Transforms</h2>
-
 <p>I want to end by tying determinants back to linear transformations.
 We know that columns of matrices can be thought of as indicating where the standard basis ends up
 as a result of some linear transform (<a href="https://youtu.be/kYB8IZa5AuE">link</a>). We also know that
-$\text{det}(e_1, ..., e_n) = 1$, so determinants describe the ratio of volume change
+$\text{det}(e_1, &hellip;, e_n) = 1$, so determinants describe the ratio of volume change
 from the unit hypercube as a result of some linear transformation.</p>
-
-<p>Thinking of determinants as volumes change makes many of it's properties intuitive. For instance:</p>
-
+<p>Thinking of determinants as volumes change makes many of it&rsquo;s properties intuitive. For instance:</p>
 <ul>
-<li>If some matrix has $\text{det}(A)=0$, ie it &quot;collapses&quot; the space,
-it's easy to see that the linear transform might be hard to &quot;undo&quot; and so the matrix won't be invertible.</li>
+<li>If some matrix has $\text{det}(A)=0$, ie it &ldquo;collapses&rdquo; the space,
+it&rsquo;s easy to see that the linear transform might be hard to &ldquo;undo&rdquo; and so the matrix won&rsquo;t be invertible.</li>
 <li>Doing two transformations in a row scales the volume multiplicatively, so $\text{det}(AB) = \text{det}(A) \cdot \text{det}(B)$.</li>
 <li>When the matrix is intertible, doing the reverse transformation should change the volume back, so $\text{det}(A^{-1}) = \text{det}(A)^{-1}$.</li>
 </ul>
